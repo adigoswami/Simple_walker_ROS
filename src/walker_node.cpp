@@ -11,7 +11,6 @@
 
 
 int main(int argc, char **argv) {
-
   /**
    * initialize the ros node
    */
@@ -20,7 +19,7 @@ int main(int argc, char **argv) {
    * create a control object
    */
   botcontrol turtlebot_control;
-  
+
   /**
    * define what rate we want the loop to run at
    */

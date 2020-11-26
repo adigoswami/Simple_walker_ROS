@@ -10,13 +10,12 @@
 // user defined header files for PID Controller
 #include "../include/botcontrol.hpp"
 
-
 /**
  * @brief control default constructor
  * @param none
  * @return none
  */
-botcontrol::botcontrol() { 
+botcontrol::botcontrol() {
   init();
 }
 
