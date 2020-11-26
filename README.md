@@ -61,7 +61,7 @@ source devel/setup.bash
 roslaunch Simple_walker_ROS walker.launch
 ```
 The above command will automatically start the Gazebo application and the turtlebot will start moving while avoiding obstacles.
-```
+
 * Optional: add the argument record:=true to record all the data for 30 seconds. The default will be set to false.
 ```
 cd ~/catkin_ws/
@@ -71,6 +71,7 @@ roslaunch Simple_walker_ROS walker.launch record:=true
 ## Inspecting Rosbag
 
 * To inspect rosbag, locate where the rosbag is saved. These usually are saved in the home/.ros/ directory. Run the following:
+
 ```
 rosbag info ROSBAG FILE
 ```
