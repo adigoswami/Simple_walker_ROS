@@ -70,7 +70,7 @@ roslaunch Simple_walker_ROS walker.launch record:=true
 ```
 ## Inspecting Rosbag
 
-* To inspect rosbag, locate where the rosbag is saved. These usually are saved in the home/.ros/ directory. Run the following:
+* To inspect rosbag, locate where the rosbag is saved. These usually are saved in the home/.ros/ directory. To get more information about the generated rosbag file, open the results directory in terminal and run the following command:
 
 ```
 rosbag info ROSBAG FILE
