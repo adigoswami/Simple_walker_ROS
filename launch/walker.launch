@@ -15,7 +15,7 @@ name="walker_node"
 pkg="rosbag"
 name="record"
 type="record"
-args="record -a -o my_rosbag -x '/camera(.*)' --duration=60"
+args="record -a -o my_rosbag -x '/camera(.*)' --duration=30"
 if="$(arg record)" />
 
 </launch>

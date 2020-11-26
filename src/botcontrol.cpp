@@ -27,7 +27,7 @@ botcontrol::botcontrol() {
  */
 void botcontrol::init() {
   cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 10);
-  scan_sub = nh.subscribe("scan", 10, &control::scanCallback, this);
+  scan_sub = nh.subscribe("scan", 10, &botcontrol::scanCallback, this);
 }
 
 /**
@@ -66,7 +66,6 @@ void botcontrol::scanCallback(const sensor_msgs::LaserScan::ConstPtr &msg) {
  * @return none
  */
 void botcontrol::solve() {
-void control::solve() {
   double forward_clearance = .4;
   double side_clearance = .3;
 

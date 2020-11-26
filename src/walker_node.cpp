@@ -1,4 +1,14 @@
+/**
+ * @file walker_node.cpp
+ * @version 1.0
+ * @brief Ros node that controls the turtlebot 
+ * @Created on: Nov 25, 2020
+ * @copyright 2020 
+ * @Author Aditya Goswami
+ */
+
 #include "../include/botcontrol.hpp"
+
 
 int main(int argc, char **argv) {
 
