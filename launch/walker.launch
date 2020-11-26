@@ -1,0 +1,21 @@
+<launch>
+<arg name="record" default="false" />
+
+<include 
+file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"
+/>
+
+<node
+pkg="Simple_walker_ROS"
+type="walker_node"
+name="walker_node"
+/>
+
+<node
+pkg="rosbag"
+name="record"
+type="record"
+args="record -a -o my_rosbag -x '/camera(.*)' --duration=60"
+if="$(arg record)" />
+
+</launch>

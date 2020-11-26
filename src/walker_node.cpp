@@ -1,36 +1,30 @@
-#include <sstream>
-#include <iostream>
-#include "ros/ros.h"
-#include "std_msgs/String.h"
-#include "geometry_msgs/Twist.h"
-
+#include "../include/botcontrol.hpp"
 
 int main(int argc, char **argv) {
 
-  ros::init(argc, argv, "walker_node");
-  /*Turtlebot3Drive turtlebot3_drive;*/
-
-  ros::NodeHandle nh;
-
-
-  ros::Publisher control_pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 10);
+  /**
+   * initialize the ros node
+   */
+  ros::init(argc, argv, "turtlebot_control");
+  /**
+   * create a control object
+   */
+  botcontrol turtlebot_control;
   
-  ros::Subscriber sub = nh.subscribe("scan", 1000, chatterCallback);
-
-  geometry_msgs::Twist cmd_vel_msg;
-  cmd_vel_msg.linear.x = .1;
-  cmd_vel_msg.angular.z = 0;
-
+  /**
+   * define what rate we want the loop to run at
+   */
   ros::Rate loop_rate(125);
 
-  while (ros::ok())
-  {
-    /*turtlebot3_drive.controlLoop();*/
-    control_pub.publish(cmd_vel_msg);
+  /**
+   * while loop that will drive the turtlebot around at the rate 
+   * defined above until ros shuts down
+   */
+  while (ros::ok()) {
+    turtlebot_control.solve();
     ros::spinOnce();
     loop_rate.sleep();
   }
 
   return 0;
-
-} 
+}
