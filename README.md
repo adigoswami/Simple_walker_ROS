@@ -75,3 +75,21 @@ roslaunch Simple_walker_ROS walker.launch record:=true
 ```
 rosbag info ROSBAG FILE
 ```
+Here:
+```
+rosbag info Simple_Walker
+```
+
+## Playing the rosbag file
+The rosbag file records all the messages being published on to the terminal. For example, the bag file generated and saved in the results folder.
+
+Open the results folder in a new terminal and run:
+```
+rosbag play Simple_walker.bag
+```
+You will see that all the messages recorded are being replayed. 
+To verify this, run
+```
+rostopic list
+```
+We will see that all the topics of the turtlebot are active.
