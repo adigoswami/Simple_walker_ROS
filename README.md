@@ -25,30 +25,48 @@ source /opt/ros/melodic/setup.bash
 cd ~/catkin_ws/src
 git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 ```
-* It also assumes the user has a created a catkin workspace by following this tutorial:
+* It also assumes the user has a created a catkin workspace by following this tutorial or you can follow the commands given further down this page under 'Build Instructions':
 ```
 http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 ```
 
-## Build
+## Build Instructions
 
-* To build this project, download this project into your catkin_ws/src file and build the catkin ws:
+To run this code in a catkin workspace:
 ```
-cd ~/catkin_ws/src
+cd ~/catkin_ws/
+source devel/setup.bash
+cd src/
 git clone https://github.com/adigoswami/Simple_walker_ROS
-cd ~/catkin_ws
+cd ..
 catkin_make
 ```
-
+If you do not have a catkin workspace:
+```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+source devel/setup.bash
+cd src/
+git clone --recursive https://github.com/adigoswami/Simple_walker_ROS
+cd ..
+catkin_make
+```
 ## Running
 
-* To run this project, run the launch file:
+* After completing the building step, go to the workspace in the terminal and give the following commands.
 ```
-roslaunch Simple_walker_ROS Simple_walker_ROS.launch 
+cd ~/catkin_ws/
+source devel/setup.bash
+roslaunch Simple_walker_ROS walker.launch
+```
+The above command will automatically start the Gazebo application and the turtlebot will start moving while avoiding obstacles.
 ```
 * Optional: add the argument record:=true to record all the data for 30 seconds. The default will be set to false.
 ```
-roslaunch Simple_walker_ROS Simple_walker_ROS.launch record:=true
+cd ~/catkin_ws/
+source devel/setup.bash
+roslaunch Simple_walker_ROS walker.launch record:=true
 ```
 ## Inspecting Rosbag
 
